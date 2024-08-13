@@ -20,7 +20,7 @@ function App() {
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<div>home page</div>}/>    
-      <Route path="/testingss" element={
+      <Route path="/testing" element={
           <div>
             <h2>testing</h2>
             <ButtonUsage></ButtonUsage>
