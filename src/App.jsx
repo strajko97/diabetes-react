@@ -1,7 +1,10 @@
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
+import ButtonUsage from "./components/ButtonUsage.jsx";
+import RecipeCard from "/components/RecipeCard.jsx";
 
 import { BrowserRouter,Routes,Route } from "react-router-dom";
+
 
 function App() {
   // return(
@@ -20,6 +23,8 @@ function App() {
       <Route path="/testing" element={
           <div>
             <h2>testing</h2>
+            <ButtonUsage></ButtonUsage>
+            <RecipeCard></RecipeCard>
           </div>
       }/>
     </Routes>
