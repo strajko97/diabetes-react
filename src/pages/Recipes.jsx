@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // Import useState and useEffect along with React
 import Layout from '../layouts/Layout';
 import RecipeCard from '../components/Recipe/RecipeCard';
+import MockRecipeService from '../services/RecipeService'
 
 const Recipes = () => {
-    // Array of RecipeCard components
-    const recipeCards = Array.from({ length: 20 }, (_, index) => (
-        <RecipeCard key={index} />
-    ));
+    const [recipes, setRecipes] = useState([]);
+
+    useEffect(() => {
+        // Fetch recipes from the mock service
+        const fetchedRecipes = MockRecipeService.getRecipes();
+        setRecipes(fetchedRecipes);
+    }, []);
 
     return (
         <Layout>
             <div className="container mt-4">
-                {/*for small sreen to be 3 for larger tham medium 0}*/}
+                {/* For small screens: padding 3, for medium and larger: padding 0 */}
                 <div className="row p-3 p-md-0">
-                    {recipeCards}
+                    {recipes.map((recipe, index) => (
+                        <RecipeCard key={recipe.id} recipe={recipe} />
+                    ))}
                 </div>
             </div>
         </Layout>

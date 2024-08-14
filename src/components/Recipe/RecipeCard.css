@@ -1,4 +1,6 @@
 ﻿.recipe {
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s;
   font-family: "Rubik", sans-serif;
@@ -10,7 +12,21 @@
 }
 
 .recipe-description {
-  display: block;
-  overflow-x: scroll;
+  display: -webkit-box;
+  /* -webkit-line-clamp: 3; */
+  /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
+  height: auto;
+  /* Adjust based on number of lines */
+}
+
+.recipe-image {
+  width: 100%;
+  /* Adjust as needed */
+  height: 200px;
+  /* Adjust as needed */
+  object-fit: cover;
+  /* Maintains aspect ratio and covers the element */
 }
