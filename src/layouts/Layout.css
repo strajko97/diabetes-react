@@ -1,0 +1,163 @@
+﻿/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+/* General Styles */
+a {
+  color: #0077cc;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Button Styles */
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.btn-search {
+  height: 40px;
+  width: 30%;
+  outline: none;
+  border: none;
+  background: rgb(98, 196, 126);
+  color: white;
+  border-radius: 60px;
+  font-weight: 700;
+  padding-top: 8px;
+}
+
+.btn-search:hover {
+  background-color: rgb(73, 152, 95);
+  transition: 0.5s;
+}
+
+/* Input Styles */
+.search {
+  height: 40px;
+  width: 100%;
+  border-radius: 60px;
+  outline: none;
+  margin-right: -35px;
+  font-family: "Rubik", sans-serif;
+  border: 2px solid rgb(98, 196, 126);
+}
+
+/* Footer Styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  background-color: rgb(98, 196, 126);
+}
+
+.footerContainer {
+  width: 100%;
+  padding: 20px 30px;
+}
+
+.footer-site-name {
+  font-size: 2rem;
+  color: black;
+  font-family: "Lobster", cursive;
+  text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
+}
+
+.footer-subCategory h5 {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  font-family: "Rubik", sans-serif;
+}
+
+.footer-subCategory h4 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-family: "Rubik", sans-serif;
+  color: #000000;
+}
+
+.footer-subCategory h4:hover {
+  font-weight: bold;
+}
+
+.fotterBottom {
+  color: #f2f4f6;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+  background-color: rgb(111, 222, 144);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Icons Styles */
+.icons-svg {
+  fill: #000000;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: black;
+}
+
+.icons-svg:hover {
+  font-weight: bold;
+  color: black;
+}
+
+/* Navigation Styles */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.footerNav {
+  margin: 30px 0;
+}
+
+.footerNav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.footerNav ul li a {
+  color: rgb(111, 222, 144);
+  margin: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footerNav ul li a:hover {
+  opacity: 1;
+}
+
+/* Border Styles */
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Box Shadow */
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* Button Accept Policy */
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}

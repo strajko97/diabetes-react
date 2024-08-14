@@ -1,34 +1,15 @@
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
-import ButtonUsage from "./components/ButtonUsage.jsx";
-import RecipeCard from "/components/RecipeCard.jsx";
-
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./layouts/Header.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from "./layouts/Footer.jsx";
 
 function App() {
-  // return(
-  //   // <Header></Header>
-  //   <>
-  //     <Header/>
-  //     <Footer/>
-  //   </>
-  // );
-
-
   return (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<div>home page</div>}/>    
-      <Route path="/testings" element={
-          <div>
-            <h2>testing</h2>
-            <ButtonUsage></ButtonUsage>
-            <RecipeCard></RecipeCard>
-          </div>
-      }/>
-    </Routes>
-  </BrowserRouter>
+    <Router>
+      <Header />
+      <Footer/>
+    </Router>
   );
 }
 
