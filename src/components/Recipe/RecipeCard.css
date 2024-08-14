@@ -1,0 +1,16 @@
+﻿.recipe {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s;
+  font-family: "Rubik", sans-serif;
+}
+
+.recipe:hover {
+  transform: scale(1.06);
+  /*  transition-delay: 0.2s;*/
+}
+
+.recipe-description {
+  display: block;
+  overflow-x: scroll;
+  text-overflow: ellipsis;
+}

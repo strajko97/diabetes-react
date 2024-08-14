@@ -53,7 +53,7 @@ a.navbar-brand {
 
 /* Footer Styles */
 .footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
   white-space: nowrap;
