@@ -9,7 +9,7 @@ function Header() {
                 <div className="container">
                     <Link className="navbar-brand" to="/">Zdrava ishrana</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-                            aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarScroll">
@@ -17,11 +17,11 @@ function Header() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/recepti">Recepti</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link id="kontakt" className="nav-link" to="/kontakt">Kontakt</Link>
+                            <li className="nav-link">
+                                Kontakt
                             </li>
                         </ul>
-                      
+
                         <form className="d-flex" role="search">
                             <input id="search-input" className="px-2 search" type="search" placeholder="Pretraži" aria-label="Search" />
                             <button className="btn-search pb-1">
@@ -32,7 +32,7 @@ function Header() {
                                 </svg>
                             </button>
                         </form>
-                    </div>                
+                    </div>
                 </div>
             </nav>
         </section>

@@ -10,6 +10,10 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size: 2rem;
+  color: black;
+  font-family: "Lobster", cursive;
+  text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
 }
 
 /* Button Styles */
@@ -111,7 +115,7 @@ a.navbar-brand {
 
 /* Navigation Styles */
 .nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
+.nav-pills .show>.nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;

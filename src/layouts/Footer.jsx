@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Layout.css'; 
+import './Layout.css';
+
 
 function Footer() {
   return (
-    
+
     <div className="footer container-fluid mt-5" style={{ backgroundImage: 'linear-gradient(rgb(98, 196, 126), rgb(0, 109, 10))' }}>
       <div className="row">
         <div className="col-lg-3 col-md-10 col-sm-10 mx-auto my-lg-2 text-center">
           <div className="footer-site-name">Zdrava ishrana</div>
-          <Link to="/kupovina/politika-privatnosti" className="text-decoration-none">
+          <Link to="/o-nama" className="text-decoration-none">
             <div className="footer-subCategory"><h4>O nama</h4></div>
           </Link>
         </div>
         <div className="col-lg-3 col-md-4 col-sm-10 mx-auto my-lg-2 text-center">
           <div className="footer-subCategory"><h5>Uslovi korišćenja</h5></div>
-          <Link to="/kupovina/politika-privatnosti" className="text-decoration-none">
+          <Link to="/politika-privatnosti" className="text-decoration-none">
             <div className="footer-subCategory"><h4>Politika privatnosti</h4></div>
           </Link>
         </div>
@@ -54,10 +55,10 @@ function Footer() {
               </div>
               <div className="icons-svg">
                 <svg viewBox="0 0 24 24" width="27" height="27" xmlns="http://www.w3.org/2000/svg" fill="none" strokeWidth="2" stroke="currentColor" className="w-7 h-7">
-                    <path d="M4 4h16c1.104 0 2 .896 2 2v12c0 1.104-.896 2-2 2H4c-1.104 0-2-.896-2-2V6c0-1.104.896-2 2-2zM4 6l8 5 8-5M4 18l8-5 8 5"></path>
+                  <path d="M4 4h16c1.104 0 2 .896 2 2v12c0 1.104-.896 2-2 2H4c-1.104 0-2-.896-2-2V6c0-1.104.896-2 2-2zM4 6l8 5 8-5M4 18l8-5 8 5"></path>
                 </svg>
                 zdrava_ishrana@gmail.com
-                </div>
+              </div>
             </div>
           </div>
         </div>
