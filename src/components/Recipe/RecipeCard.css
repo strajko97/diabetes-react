@@ -4,17 +4,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.5s;
   font-family: "Rubik", sans-serif;
+  position: relative;
+  /* Ensure rating container is positioned relative to the card */
 }
 
 .recipe:hover {
   transform: scale(1.06);
-  /*  transition-delay: 0.2s;*/
+  /* transition-delay: 0.2s;*/
 }
 
 .recipe-description {
   display: -webkit-box;
-  /* -webkit-line-clamp: 3; */
-  /* Number of lines to show */
+  -webkit-line-clamp: 3;
+  /* Limit to 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -24,9 +26,34 @@
 
 .recipe-image {
   width: 100%;
-  /* Adjust as needed */
   height: 200px;
-  /* Adjust as needed */
   object-fit: cover;
-  /* Maintains aspect ratio and covers the element */
+}
+
+.rating-container {
+  position: absolute;
+  top: 10px;
+  /* Adjust as needed */
+  left: 10px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  /* Optional: add a background to make the rating more visible */
+  padding: 5px;
+  border-radius: 5px;
+  /* Optional: rounded corners for the rating container */
+}
+
+.rating-star {
+  width: 20px;
+  /* Adjust as needed */
+  height: 20px;
+  margin-right: 5px;
+  /* Space between star and rating */
+}
+
+.rating-value {
+  font-size: 14px;
+  /* Adjust as needed */
+  font-weight: bold;
 }
