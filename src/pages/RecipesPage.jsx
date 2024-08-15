@@ -7,7 +7,6 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        // Fetch recipes from the mock service
         const fetchedRecipes = MockRecipeService.getRecipes();
         setRecipes(fetchedRecipes);
     }, []);

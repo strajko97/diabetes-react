@@ -6,7 +6,7 @@ import Home from './pages/HomePage';
 import AboutUs from './pages/AboutUsPage';
 import PrivacyPolicy from './pages/PrivacyPolicyPage';
 import Recipe from './pages/RecipesPage';
-import RecipeDetail from './components/Recipe/RecipeDetail';
+import RecipeDetail from './pages/RecipeDetail';
 
 function App() {
   return (
