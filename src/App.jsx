@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Add this line to import Routes and Route
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import Recipe from './pages/Recipes';
+import Home from './pages/HomePage';
+import AboutUs from './pages/AboutUsPage';
+import PrivacyPolicy from './pages/PrivacyPolicyPage';
+import Recipe from './pages/RecipesPage';
 import RecipeDetail from './components/Recipe/RecipeDetail';
 
 function App() {

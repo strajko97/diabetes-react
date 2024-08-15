@@ -1,0 +1,33 @@
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 1.5rem;
+    margin-right: 2px;
+    position: relative;
+    color: #e0e0e0;
+}
+
+.full {
+    color: #000;
+}
+
+.half {
+    position: relative;
+}
+
+.half::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #000;
+}
+
+.empty {
+    color: #e0e0e0;
+
+}
