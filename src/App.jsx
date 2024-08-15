@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Recipe from './pages/Recipes';
+import RecipeDetail from './components/Recipe/RecipeDetail';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/o-nama" element={<AboutUs />} />
         <Route path="/politika-privatnosti" element={<PrivacyPolicy />} />
         <Route path="/recepti" element={<Recipe />} />
+        <Route path="/recepti/:id" element={<RecipeDetail />} />
       </Routes>
     </Router>
   );
