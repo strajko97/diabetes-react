@@ -1,15 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Layout.css';
 
 function Header() {
+
     const handleContactClick = (event) => {
         event.preventDefault(); // Prevent the default anchor behavior adding #kontakt to url
         const contactSection = document.getElementById('kontakt');
         if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
+            contactSection.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     };
+
+
+    const location = useLocation();
+
+    useEffect(() => {
+        // Temporarily disable smooth scrolling
+        const htmlElement = document.documentElement;
+        htmlElement.style.scrollBehavior = 'auto';
+
+        // Scroll to the top of the page instantly when the route changes
+        if (!location.hash) {
+            window.scrollTo(0, 0); // Instant scroll
+        }
+
+        // Re-enable smooth scrolling or clean up by removing the style
+        // return () => {
+        //     htmlElement.style.scrollBehavior = ''; // Resets to the default behavior
+        // };
+    }, [location]);
+
+
+
+
 
     return (
         <section className="header sticky-top">

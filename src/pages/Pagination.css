@@ -1,0 +1,83 @@
+/* Custom Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-item.active .page-link {
+    background-color: #008000;
+    /* Match the green from the footer */
+    border-color: #008000;
+    /* Match the green from the footer */
+    color: #fff;
+    border-radius: 4px;
+    padding: 6px 10px;
+    /* Smaller padding for a more compact look */
+    font-size: 14px;
+    /* Reduced font size */
+    outline: none;
+    /* Remove focus outline */
+    box-shadow: none;
+    /* Remove default focus shadow */
+}
+
+.page-link {
+    color: #008000;
+    /* Match the green from the footer */
+    border: 1px solid #008000;
+    /* Match the green from the footer */
+    background-color: #f8f9fa;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 4px;
+    padding: 6px 10px;
+    /* Smaller padding for a more compact look */
+    margin: 0 3px;
+    /* Slightly less margin */
+    font-size: 14px;
+    /* Reduced font size */
+    text-decoration: none;
+    outline: none;
+    /* Remove focus outline */
+    box-shadow: none;
+    /* Remove default focus shadow */
+}
+
+.page-link:focus {
+    outline: none;
+    /* Remove focus outline */
+    box-shadow: none;
+    /* Remove default focus shadow */
+}
+
+.page-link:hover {
+    background-color: #006400;
+    /* Darker green on hover */
+    color: #fff;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    border-radius: 4px;
+    padding: 6px 10px;
+    /* Smaller padding */
+    font-size: 14px;
+    /* Reduced font size */
+}
+
+.page-item:not(.active) .page-link {
+    border-radius: 4px;
+    padding: 6px 10px;
+    /* Smaller padding */
+    margin: 0 3px;
+    /* Slightly less margin */
+}
+
+.page-item:not(.active) .page-link:hover {
+    background-color: #006400;
+    /* Darker green on hover */
+    color: #fff;
+}

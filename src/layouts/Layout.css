@@ -156,7 +156,3 @@ button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
-
-html {
-  scroll-behavior: smooth;
-}
