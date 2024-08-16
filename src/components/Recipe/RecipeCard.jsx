@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import './RecipeCard.css';
 
 const RecipeCard = ({ recipe }) => {
-  const truncatedDescription = recipe.description.length > 200
-    ? `${recipe.description.substring(0, 200)}...`
+  const truncatedDescription = recipe.description.length > 150
+    ? `${recipe.description.substring(0, 150)}...`
     : recipe.description;
 
   return (
-    <div className="col-lg-3 col-sm-10 col-md-6 mx-sm-auto mx-md-0 text-center p-2">
-      <div className="recipe border-3 rounded p-3">
+    <div className="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+      <div className="recipe-card border-0 rounded shadow-sm overflow-hidden">
 
         <div className="rating-container">
           <svg
             className="rating-star"
-            fill="#000000"
+            fill="#FFD700" /* Gold color for the star */
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -26,22 +26,20 @@ const RecipeCard = ({ recipe }) => {
         </div>
 
         <Link to={`/recepti/${recipe.id}`} className="recipe-link">
-          <div className="container">
-            <img
-              src={recipe.imageUrl}
-              alt={recipe.title}
-              className="img-fluid recipe-image"
-            />
-          </div>
+          <img
+            src={recipe.imageUrl}
+            alt={recipe.title}
+            className="img-fluid recipe-image rounded-top"
+          />
         </Link>
 
         <Link to={`/recepti/${recipe.id}`} className="recipe-link">
-          <div className="my-auto" style={{ height: '60px' }}>
-            <h4 className="card-title py-2">{recipe.title}</h4>
+          <div className="recipe-title-container text-center">
+            <h4 className="card-title py-3">{recipe.title}</h4>
           </div>
         </Link>
 
-        <div className="recipe-description" style={{ height: '100px', textAlign: 'center', overflowY: 'auto' }}>
+        <div className="recipe-description px-3 py-2">
           {truncatedDescription}
         </div>
       </div>

@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import './Layout.css';
 
 function Header() {
+    const handleContactClick = (event) => {
+        event.preventDefault(); // Prevent the default anchor behavior adding #kontakt to url
+        const contactSection = document.getElementById('kontakt');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <section className="header sticky-top">
             <nav className="navbar navbar-expand-lg bg-light">
@@ -18,7 +26,8 @@ function Header() {
                                 <Link className="nav-link" to="/recepti">Recepti</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#kontakt">Kontakt</a> {/* Link to the id */}
+                                {/* Use onClick to prevent default behavior and trigger smooth scrolling */}
+                                <a className="nav-link" href="#kontakt" onClick={handleContactClick}>Kontakt</a>
                             </li>
                         </ul>
 
