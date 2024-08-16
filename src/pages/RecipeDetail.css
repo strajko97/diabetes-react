@@ -1,6 +1,4 @@
-﻿/* RecipeDetail.css */
-
-.recipe-detail {
+﻿.recipe-detail {
     padding: 20px;
     font-family: 'Raleway', sans-serif;
     color: #333;
@@ -23,14 +21,12 @@
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    /* Adding a more substantial shadow */
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .recipe-detail-image:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
-    /* Slightly intensify shadow on hover */
 }
 
 .recipe-info {

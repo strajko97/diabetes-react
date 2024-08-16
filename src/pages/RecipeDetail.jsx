@@ -41,7 +41,6 @@ const RecipeDetail = () => {
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-12">
-
                         <div className="recipe-detail-description">
                             <strong>Sastojci</strong>
                             <ul className="list-unstyled mt-2">
@@ -52,7 +51,6 @@ const RecipeDetail = () => {
                                 ))}
                             </ul>
                         </div>
-
                     </div>
                 </div>
 
@@ -91,12 +89,11 @@ const RecipeDetail = () => {
                                     </tr>
                                 ))}
 
-                                {/* New Row styled similarly to the header */}
                                 <tr>
                                     <th>NUTRITIVNI PODACI ZA GOTOVO JELO NA 100gr</th>
                                     <th>{recipe.kcal}</th>
-                                    <th>{recipe.carboHydrates}</th>
-                                    <th>{recipe.protein}</th>
+                                    <th>{recipe.carbohydrates}</th>
+                                    <th>{recipe.proteins}</th>
                                     <th>{recipe.fats}</th>
                                 </tr>
                             </tbody>

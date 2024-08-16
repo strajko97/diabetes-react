@@ -1,17 +1,17 @@
 import { Ingredient } from './Ingredient';
 
 export class Recipe {
-    constructor(id, title, description, imageUrl, rating, kcal, protein, carboHydrates, fats, ingredients = []) {
+    constructor(id, title, description, imageUrl, rating, kcal, proteins, carbohydrates, fats, ingredients) {
         this.id = id;
         this.title = title;
-        this.kcal = kcal;
-        this.protein = protein;
-        this.carboHydrates = carboHydrates;
-        this.fats = fats;
         this.description = description;
         this.imageUrl = imageUrl;
         this.rating = rating;
-        this.ingredients = ingredients; // Array of Ingredient objects
+        this.kcal = kcal;
+        this.proteins = proteins;
+        this.carbohydrates = carbohydrates;
+        this.fats = fats;
+        this.ingredients = ingredients;
     }
 
     addIngredient(ingredient) {
@@ -27,4 +27,6 @@ export class Recipe {
             ingredient => ingredient.name !== ingredientName
         );
     }
+
+
 }

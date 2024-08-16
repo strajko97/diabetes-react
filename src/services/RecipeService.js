@@ -27,7 +27,7 @@ class MockRecipeService {
                 25,  // proteins
                 75,  // carbohydrates
                 20,  // fats
-                this.getRandomIngredients(3) // Assign 3 random ingredients
+                this.getRandomIngredients(2) // Assign 3 random ingredients
             ),
             new Recipe(
                 2,
@@ -35,7 +35,7 @@ class MockRecipeService {
                 'International meal of Hungarians. Delicious meat with sauce.',
                 'https://glossy.espreso.co.rs/data/images/2022/12/04/13/350283_kafanskisvinjskigulasshutterstock-1962728122_ff.jpg',
                 4.76,
-                700, // kcal
+                600, // kcal
                 35,  // proteins
                 60,  // carbohydrates
                 30,  // fats
@@ -93,6 +93,16 @@ class MockRecipeService {
     // Method to fetch all recipes
     getRecipes() {
         return this.recipes;
+    }
+
+    // Method to get the total number of recipes
+    getTotalRecipes() {
+        return this.recipes.length;
+    }
+
+    // Method to fetch the number of recipes per page
+    getRecipesPerPage() {
+        return config.productsPerPage;
     }
 
     // Method to fetch a single recipe by ID

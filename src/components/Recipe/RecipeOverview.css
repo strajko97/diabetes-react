@@ -1,0 +1,15 @@
+.recipes-overview {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.recipes-overview p {
+  font-size: 1.2rem;
+  color: #000000;
+  /* Green color to match the theme */
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}

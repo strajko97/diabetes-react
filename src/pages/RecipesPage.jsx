@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import RecipeCard from '../components/Recipe/RecipeCard';
 import MockRecipeService from '../services/RecipeService';
-import { config } from '../config';
+import RecipesOverview from '../components/Recipe/RecipeOverview'; // Import the new component
 import './Pagination.css';
 
 const Recipes = () => {
@@ -18,11 +18,11 @@ const Recipes = () => {
         setRecipes(fetchedRecipes);
     }, []);
 
-    const indexOfLastRecipe = currentPage * config.productsPerPage;
-    const indexOfFirstRecipe = indexOfLastRecipe - config.productsPerPage;
+    const indexOfLastRecipe = currentPage * MockRecipeService.getRecipesPerPage();
+    const indexOfFirstRecipe = indexOfLastRecipe - MockRecipeService.getRecipesPerPage();
     const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
-    const totalPages = Math.ceil(recipes.length / config.productsPerPage);
+    const totalPages = Math.ceil(recipes.length / MockRecipeService.getRecipesPerPage());
 
     const paginate = (pageNumber) => {
         // Immediately scroll to the top before navigating
@@ -79,8 +79,15 @@ const Recipes = () => {
 
     return (
         <Layout>
-            <div className="container mt-4">
-                <div className="row p-3 p-md-0">
+            <div className="container mt-4 mb-4">
+                {/* Display the RecipesOverview */}
+                <RecipesOverview
+                    currentPage={currentPage}
+                    totalRecipes={MockRecipeService.getTotalRecipes()}
+                    recipesPerPage={MockRecipeService.getRecipesPerPage()}
+                />
+
+                <div className="row p-3 p-md-0 mt-2">
                     {currentRecipes.map((recipe) => (
                         <RecipeCard key={recipe.id} recipe={recipe} />
                     ))}
