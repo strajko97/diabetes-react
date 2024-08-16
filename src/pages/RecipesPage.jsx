@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'; // Import useState and useEffect along with React
+import React, { useState, useEffect } from 'react';
 import Layout from '../layouts/Layout';
 import RecipeCard from '../components/Recipe/RecipeCard';
 import MockRecipeService from '../services/RecipeService'

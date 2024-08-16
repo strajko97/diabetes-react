@@ -2,13 +2,18 @@
 
 .recipe-detail {
     padding: 20px;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 .recipe-title {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #2c3e50;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: 'Raleway', sans-serif;
 }
 
 .recipe-detail-image {
@@ -17,6 +22,15 @@
     height: auto;
     object-fit: cover;
     border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Adding a more substantial shadow */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-detail-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+    /* Slightly intensify shadow on hover */
 }
 
 .recipe-info {
@@ -29,6 +43,11 @@
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 20px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-detail-ingredients {
@@ -44,8 +63,8 @@
 }
 
 .ingredient-tag {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #e74c3c;
+    color: #fff;
     border-radius: 12px;
     padding: 10px 15px;
     font-size: 14px;
@@ -53,37 +72,42 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.3s;
     text-align: center;
-    width: 100%;
+    width: calc(50% - 10px);
 }
 
 .ingredient-tag:hover {
-    background-color: #e0e0e0;
+    background-color: #c0392b;
     transform: scale(1.05);
 }
-
-.recipe-detail-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-
 
 .table {
     width: 100%;
     margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .table-bordered {
     border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .table th,
 .table td {
-    padding: 8px;
+    padding: 12px;
     text-align: center;
     vertical-align: middle;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+}
+
+.table th {
+    font-weight: bold;
+    background-color: #bdc3c7;
+    color: #000000;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -91,5 +115,5 @@
 }
 
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #fff;
+    background-color: #ffffff;
 }

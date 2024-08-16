@@ -20,13 +20,18 @@ const RecipeDetail = () => {
                 <div className="row justify-content-center">
                     <div className="col-lg-8 text-center">
                         <h1 className="recipe-title">{recipe.title}</h1>
+
+                    </div>
+                </div>
+                <div className="row justify-content-center">
+                    <div className='col-lg-10 text-center'>
                         <Rating value={recipe.rating} />
                     </div>
                 </div>
 
                 {/* Image, Ingredients and Description */}
                 <div className="row justify-content-center mt-4">
-                    <div className="col-lg-6 col-md-12">
+                    <div className="col-lg-6 col-md-12 col-xs-12">
                         <div className="image-container">
                             <img
                                 src={recipe.imageUrl}
@@ -36,14 +41,18 @@ const RecipeDetail = () => {
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-12">
-                        <strong>Sastojci:</strong>
-                        <ul className="list-unstyled mt-2">
-                            {recipe.ingredients.map((ingredient, index) => (
-                                <li key={index}>
-                                    {ingredient.name} ({ingredient.quantity})
-                                </li>
-                            ))}
-                        </ul>
+
+                        <div className="recipe-detail-description">
+                            <strong>Sastojci</strong>
+                            <ul className="list-unstyled mt-2">
+                                {recipe.ingredients.map((ingredient, index) => (
+                                    <li key={index}>
+                                        {ingredient.name} ({ingredient.quantity})
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 
@@ -51,7 +60,7 @@ const RecipeDetail = () => {
                 <div className="row justify-content-center mt-4">
                     <div className="col-lg-10 col-md-12">
                         <div className="recipe-detail-description">
-                            <strong>Opis proizvoda:</strong>
+                            <strong>Način pripreme</strong>
                             <p>{recipe.description}</p>
                         </div>
                     </div>

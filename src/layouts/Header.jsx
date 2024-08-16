@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Layout.css'; // Import the CSS file
+import './Layout.css';
 
 function Header() {
     return (
@@ -17,8 +17,8 @@ function Header() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/recepti">Recepti</Link>
                             </li>
-                            <li className="nav-link">
-                                Kontakt
+                            <li className="nav-item">
+                                <a className="nav-link" href="#kontakt">Kontakt</a> {/* Link to the id */}
                             </li>
                         </ul>
 

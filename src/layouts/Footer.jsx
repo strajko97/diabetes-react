@@ -22,7 +22,7 @@ function Footer() {
           </Link>
         </div>
         <div className="col-lg-3 col-md-4 col-sm-10 mx-auto my-lg-2 my-sm-2 my-2 text-center">
-          <div className="col-10 mx-auto">
+          <div id="kontakt" className="col-10 mx-auto">
             <div className="footer-subCategory">
               <h5>Kontakt</h5>
             </div>
