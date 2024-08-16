@@ -1,0 +1,40 @@
+.ingredient-filter {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.ingredient-filter h5 {
+    font-size: 1.2rem;
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    font-size: 1rem;
+    color: #555;
+}
+
+.form-check-input:checked {
+    background-color: #008000;
+    /* Zeleno kao naslov */
+    border-color: #008000;
+    /* Zeleno kao naslov */
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}

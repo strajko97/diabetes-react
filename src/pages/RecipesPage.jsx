@@ -3,33 +3,58 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import RecipeCard from '../components/Recipe/RecipeCard';
 import MockRecipeService from '../services/RecipeService';
-import RecipesOverview from '../components/Recipe/RecipeOverview'; // Import the new component
+import RecipesOverview from '../components/Recipe/RecipeOverview';
+import IngredientFilter from '../components/Recipe/IngredientFilter';
 import './Pagination.css';
 
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
+    const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
 
     const currentPage = parseInt(searchParams.get('page')) || 1;
+    const ingredientIds = searchParams.get('ingredient') ? searchParams.get('ingredient').split(',').map(Number) : [];
 
     useEffect(() => {
         const fetchedRecipes = MockRecipeService.getRecipes();
         setRecipes(fetchedRecipes);
+        setFilteredRecipes(fetchedRecipes);
     }, []);
+
+    useEffect(() => {
+        if (ingredientIds.length) {
+            const filtered = MockRecipeService.filterRecipesByIngredients(ingredientIds);
+            setFilteredRecipes(filtered);
+        } else {
+            setFilteredRecipes(recipes);
+        }
+    }, [ingredientIds, recipes]);
 
     const indexOfLastRecipe = currentPage * MockRecipeService.getRecipesPerPage();
     const indexOfFirstRecipe = indexOfLastRecipe - MockRecipeService.getRecipesPerPage();
-    const currentRecipes = recipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
+    const currentRecipes = filteredRecipes.slice(indexOfFirstRecipe, indexOfLastRecipe);
 
-    const totalPages = Math.ceil(recipes.length / MockRecipeService.getRecipesPerPage());
+    const totalPages = Math.ceil(filteredRecipes.length / MockRecipeService.getRecipesPerPage());
 
     const paginate = (pageNumber) => {
-        // Immediately scroll to the top before navigating
-        // window.scrollTo(0, 0);
-        setSearchParams({ page: pageNumber });
-        navigate(`/recepti?page=${pageNumber}`);
+        setSearchParams({ page: pageNumber, ingredient: ingredientIds.join(',') });
+        navigate(`/recepti?page=${pageNumber}&ingredient=${ingredientIds.join(',')}`);
     };
+
+    const handleFilter = (selectedIngredientIds) => {
+        setSelectedIngredients(selectedIngredientIds);
+
+        if (selectedIngredientIds.length > 0) {
+            setSearchParams({ ingredient: selectedIngredientIds.join(','), page: 1 });
+            navigate(`/recepti?ingredient=${selectedIngredientIds.join(',')}`);
+        } else {
+            setSearchParams({ page: 1 });
+            navigate(`/recepti?page=1`);
+        }
+    };
+
 
     const paginationItems = [];
 
@@ -79,29 +104,44 @@ const Recipes = () => {
 
     return (
         <Layout>
-            <div className="container mt-4 mb-4">
-                {/* Display the RecipesOverview */}
-                <RecipesOverview
-                    currentPage={currentPage}
-                    totalRecipes={MockRecipeService.getTotalRecipes()}
-                    recipesPerPage={MockRecipeService.getRecipesPerPage()}
-                />
-
-                <div className="row p-3 p-md-0 mt-2">
-                    {currentRecipes.map((recipe) => (
-                        <RecipeCard key={recipe.id} recipe={recipe} />
-                    ))}
+            <div className="container mt-4">
+                <div className="row">
+                    <RecipesOverview
+                        currentPage={currentPage}
+                        totalRecipes={filteredRecipes.length}
+                        recipesPerPage={MockRecipeService.getRecipesPerPage()}
+                    />
                 </div>
+                <div className="row">
+                    <div className="col-lg-2 col-md-12 mb-4">
+                        <IngredientFilter onFilter={handleFilter} selectedIngredients={selectedIngredients} />
+                    </div>
+                    <div className="col-lg-10 col-md-12">
 
-                {/* Pagination Controls */}
-                <nav>
-                    <ul className="pagination justify-content-center">
-                        {paginationItems}
-                    </ul>
-                </nav>
+                        {filteredRecipes.length > 0 ? (
+                            <div className="row p-3 p-md-0">
+                                {currentRecipes.map((recipe) => (
+                                    <RecipeCard key={recipe.id} recipe={recipe} />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="no-recipes-message">
+                                <p>Nema dostupnih recepata sa izabranim sastojcima</p>
+                            </div>
+                        )}
+
+                        {totalPages > 1 && filteredRecipes.length > 0 && (
+                            <nav>
+                                <ul className="pagination justify-content-center">
+                                    {paginationItems}
+                                </ul>
+                            </nav>
+                        )}
+                    </div>
+                </div>
             </div>
         </Layout>
     );
 };
 
-export default Recipes;
+export default Recipes; 

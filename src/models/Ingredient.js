@@ -1,5 +1,6 @@
 export class Ingredient {
-    constructor(name, quantity, kcal, carbohydrates, proteins, fats) {
+    constructor(id, name, quantity, kcal, carbohydrates, proteins, fats) {
+        this.id = id;
         this.name = name;
         this.quantity = quantity;
         this.kcal = kcal;

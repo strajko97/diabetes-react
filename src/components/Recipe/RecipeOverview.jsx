@@ -7,7 +7,11 @@ const RecipesOverview = ({ currentPage, totalRecipes, recipesPerPage }) => {
 
     return (
         <div className="recipes-overview">
-            <p>Prikazano {startIndex} - {endIndex} od {totalRecipes} recepata</p>
+            {totalRecipes > 0 ? (
+                <p>Prikazano {startIndex} - {endIndex} od {totalRecipes} recepata</p>
+            ) : (
+                <p>Nema dostupnih recepata sa izabranim sastojcima</p>
+            )}
         </div>
     );
 };
