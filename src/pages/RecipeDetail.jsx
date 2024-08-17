@@ -32,7 +32,7 @@ const RecipeDetail = () => {
                 {/* Image, Ingredients and Description */}
                 <div className="row justify-content-center mt-4">
                     <div className="col-lg-6 col-md-12 col-xs-12">
-                        <div className="image-container">
+                        <div className="image-container mb-3">
                             <img
                                 src={recipe.imageUrl}
                                 alt={recipe.title}
