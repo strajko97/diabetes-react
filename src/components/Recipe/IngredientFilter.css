@@ -4,11 +4,12 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    font-family: "Charmonman", cursive;
 }
 
 .ingredient-filter h5 {
-    font-size: 1.2rem;
-    color: #008000;
+    font-size: 2rem;
+    color: rgb(55, 138, 94);
     margin-bottom: 10px;
 }
 
@@ -21,15 +22,13 @@
 }
 
 .form-check-label {
-    font-size: 1rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: rgb(55, 138, 94);
 }
 
 .form-check-input:checked {
-    background-color: #008000;
-    /* Zeleno kao naslov */
-    border-color: #008000;
-    /* Zeleno kao naslov */
+    background-color: rgb(111, 212, 158);
+    border-color: rgb(55, 138, 94);
     appearance: none;
     -webkit-appearance: none;
     width: 18px;

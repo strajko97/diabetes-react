@@ -126,7 +126,6 @@ const Recipes = () => {
                             </div>
                         ) : (
                             <div className="no-recipes-message">
-                                <p>Nema dostupnih recepata sa izabranim sastojcima</p>
                             </div>
                         )}
 

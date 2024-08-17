@@ -5,8 +5,9 @@
 }
 
 .page-item.active .page-link {
-    background-color: #008000;
-    border-color: #008000;
+    background-color: rgb(0, 50, 25);
+    /* Dark green for active state */
+    border-color: rgb(0, 50, 25);
     color: #fff;
     border-radius: 4px;
     padding: 6px 10px;
@@ -16,9 +17,11 @@
 }
 
 .page-link {
-    color: #008000;
-    border: 1px solid #008000;
-    background-color: #f8f9fa;
+    color: #fff;
+    /* White text to contrast with the green */
+    border: 1px solid rgb(0, 65, 31);
+    background-color: rgb(55, 138, 94);
+    /* Middle green for non-active state */
     transition: background-color 0.3s, color 0.3s;
     border-radius: 4px;
     padding: 6px 10px;
@@ -35,7 +38,8 @@
 }
 
 .page-link:hover {
-    background-color: #006400;
+    background-color: rgb(35, 104, 71);
+    /* Slightly darker green for hover state */
     color: #fff;
 }
 
@@ -56,6 +60,7 @@
 }
 
 .page-item:not(.active) .page-link:hover {
-    background-color: #006400;
+    background-color: rgb(35, 104, 71);
+    /* Slightly darker green for hover state */
     color: #fff;
 }

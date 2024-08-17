@@ -26,11 +26,6 @@ function Header() {
         if (!location.hash) {
             window.scrollTo(0, 0); // Instant scroll
         }
-
-        // Re-enable smooth scrolling or clean up by removing the style
-        // return () => {
-        //     htmlElement.style.scrollBehavior = ''; // Resets to the default behavior
-        // };
     }, [location]);
 
 
@@ -39,9 +34,9 @@ function Header() {
 
     return (
         <section className="header sticky-top">
-            <nav className="navbar navbar-expand-lg bg-light">
-                <div className="container">
-                    <Link className="navbar-brand" to="/">Zdrava ishrana</Link>
+            <nav className="navbar navbar-expand-lg bg-light" style={{ backgroundImage: 'linear-gradient(to right, rgb(111, 212, 158), rgb(0, 65, 31))' }}>
+                <div className="container" >
+                    <Link className="navbar-brand" to="/">Tanjirići Zdravići</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
