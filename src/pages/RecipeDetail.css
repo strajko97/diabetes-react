@@ -17,8 +17,11 @@
 .recipe-detail-image {
     width: 100%;
     max-width: 500px;
-    height: auto;
+    /* Maksimalna širina slike */
+    max-height: 300px;
+    /* Maksimalna visina slike */
     object-fit: cover;
+    /* Omogućava da slika zadrži svoj odnos širine i visine */
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
