@@ -5,8 +5,8 @@ import MockRecipeService from '../services/RecipeService';
 
 const Home = () => {
     const top3Recipes = MockRecipeService.getRecipes()
-        // .sort((a, b) => b.rating - a.rating) 
-        .slice(0, 3);
+        .sort((a, b) => b.rating - a.rating)
+        .slice(0, 6);
 
     return (
         <Layout>

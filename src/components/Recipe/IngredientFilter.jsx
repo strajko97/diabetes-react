@@ -13,7 +13,6 @@ const IngredientFilter = ({ onFilter, selectedIngredients }) => {
     const handleCheckboxChange = (event) => {
         const ingredientId = Number(event.target.value);
         const isChecked = event.target.checked;
-
         let updatedSelectedIngredients;
 
         if (isChecked) {
@@ -23,7 +22,6 @@ const IngredientFilter = ({ onFilter, selectedIngredients }) => {
             // Remove the ingredient ID if it is unchecked
             updatedSelectedIngredients = selectedIngredients.filter(id => id !== ingredientId);
         }
-
         onFilter(updatedSelectedIngredients);
     };
 
