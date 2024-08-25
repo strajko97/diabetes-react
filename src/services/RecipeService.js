@@ -252,27 +252,27 @@ class MockRecipeService {
         return recipes;
     }
 
-    // Metod za dobijanje svih recepata
+    // Metoda za dobijanje svih recepata
     getRecipes() {
         return this.recipes;
     }
 
-    // Metod za dobijanje ukupnog broja recepata
+    // Metoda za dobijanje ukupnog broja recepata
     getTotalRecipes() {
         return this.recipes.length;
     }
 
-    // Metod za dobijanje broja recepata po stranici
+    // Metoda za dobijanje broja recepata po stranici
     getRecipesPerPage() {
         return config.productsPerPage;
     }
 
-    // Metod za dobijanje jednog recepta po ID-u
+    // Metoda za dobijanje jednog recepta po ID-u
     getRecipeById(id) {
         return this.recipes.find(recipe => recipe.id === id);
     }
 
-    // Metod za dobijanje nasumičnih sastojaka
+    // Metoda za dobijanje nasumičnih sastojaka
     getRandomIngredients(count) {
         let shuffled = [...this.ingredients].sort(() => 0.5 - Math.random());
         return shuffled.slice(0, count);
@@ -282,7 +282,7 @@ class MockRecipeService {
         return this.ingredients;
     }
 
-    // Metod za filtriranje recepata po ID-ovima sastojaka
+    // Metoda za filtriranje recepata po ID-ovima sastojaka
     filterRecipesByIngredients(ingredientIds) {
         return this.recipes.filter(recipe =>
             ingredientIds.every(id =>
