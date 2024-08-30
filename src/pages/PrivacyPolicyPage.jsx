@@ -75,7 +75,7 @@ const paragraphStyle = {
 };
 
 const containerStyle = {
-    fontFamily: '"Charmonman", cursive',
+    fontFamily: '"Open Sans", sans-serif',
     lineHeight: '1.6',
     color: '#333',
     padding: '20px',

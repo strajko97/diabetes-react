@@ -1,6 +1,4 @@
-﻿/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap');
-
+﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
 a {
   color: #0077cc;
@@ -12,9 +10,11 @@ a.navbar-brand {
   word-break: break-all;
   font-size: 3rem;
   color: black;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
+
+
 
 .btn-primary {
   color: #fff;
@@ -46,7 +46,7 @@ a.navbar-brand {
   border-radius: 60px;
   outline: none;
   margin-right: -35px;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   border: 2px solid rgb(98, 196, 126);
 }
 
@@ -66,20 +66,20 @@ a.navbar-brand {
 .footer-site-name {
   font-size: 2rem;
   color: black;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   text-shadow: 1px 1px 1px rgba(128, 128, 128, 0.5);
 }
 
 .footer-subCategory h5 {
   font-size: 2rem;
   margin-top: 0.5rem;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .footer-subCategory h4 {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   color: #000000;
 }
 
@@ -90,7 +90,7 @@ a.navbar-brand {
 .fotterBottom {
   color: #f2f4f6;
   font-weight: 600;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   background-color: rgb(111, 222, 144);
   padding: 10px;
   text-align: center;
@@ -100,7 +100,7 @@ a.navbar-brand {
   fill: #000000;
   text-align: center;
   font-size: 1rem;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   color: black;
 }
 
@@ -110,14 +110,14 @@ a.navbar-brand {
 }
 
 .nav-link {
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   color: black;
   text-align: center;
 }
 
 .nav-link:hover {
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   color: black;
   text-align: center;
@@ -130,7 +130,7 @@ a.navbar-brand {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2rem;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -150,7 +150,7 @@ a.navbar-brand {
   margin: 20px;
   text-decoration: none;
   font-weight: 600;
-  font-family: "Charmonman", cursive;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.3em;
   opacity: 0.7;
   transition: 0.5s;

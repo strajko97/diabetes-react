@@ -8,24 +8,26 @@ import IngredientFilter from '../components/Recipe/IngredientFilter';
 import './Pagination.css';
 
 const Recipes = () => {
-    const [recipes, setRecipes] = useState([]);
-    const [filteredRecipes, setFilteredRecipes] = useState([]);
-    const [selectedIngredients, setSelectedIngredients] = useState([]);
+    const recipes2 = MockRecipeService.getRecipes();
+    // const [recipes, setRecipes] = useState();
+    const [recipes] = useState(recipes2); // postavljamo pocetno stanje na recepte
+    const [filteredRecipes, setFilteredRecipes] = useState(recipes);//menjamo stanje recepata na stanici jer menjamo filtere i dobijamo nove recepte, pocetno stanje su zapravo prvi recpti
+    const [selectedIngredients, setSelectedIngredients] = useState([]);//selektovani sajstojci za fitere su prazni
     const [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
 
     const currentPage = parseInt(searchParams.get('page')) || 1;
     const ingredientIds = searchParams.get('ingredient') ? searchParams.get('ingredient').split(',').map(Number) : [];
 
-    useEffect(() => {
-        const fetchedRecipes = MockRecipeService.getRecipes();
-        setRecipes(fetchedRecipes);
-        setFilteredRecipes(fetchedRecipes);
-    }, []);
+    // useEffect(() => {
+    //     const fetchedRecipes = MockRecipeService.getRecipes();
+    //     // setRecipes(fetchedRecipes);
+    //     setFilteredRecipes(fetchedRecipes);
+    // }, []);
 
     useEffect(() => {
         if (ingredientIds.length) {
-            const filtered = MockRecipeService.filterRecipesByIngredients(ingredientIds);
+            const filtered = MockRecipeService.filterRecipesByIngredients(ingredientIds);//menja se stanje recepta kada se
             setFilteredRecipes(filtered);
         } else {
             setFilteredRecipes(recipes);
@@ -40,7 +42,11 @@ const Recipes = () => {
 
     const paginate = (pageNumber) => {
         setSearchParams({ page: pageNumber, ingredient: ingredientIds.join(',') });
-        navigate(`/recepti?page=${pageNumber}&ingredient=${ingredientIds.join(',')}`);
+        const url = `/recepti?page=${pageNumber}`;
+        if (selectedIngredients.length != 0) {
+            url += `ingredient=${ingredientIds.join(', ')}`;
+        }
+        navigate(url);
     };
 
     const handleFilter = (selectedIngredientIds) => {

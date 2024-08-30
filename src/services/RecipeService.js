@@ -86,7 +86,7 @@ class MockRecipeService {
             ),
             new Recipe(
                 4,
-                'Bečka šnicla',
+                'Bečka šnicla 1',
                 'Pileći file umočite u umućena jaja, a zatim u mrvice od sira. Pržite na vrelom ulju dok ne postane zlatno-smeđa. Poslužite sa kriškama limuna.',
                 'https://stomacko-cloud.s3.eu-central-1.amazonaws.com/medium/619a93023330df1c6f1b02e0%20Medium.jpeg',
                 5,

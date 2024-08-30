@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { format } from 'date-fns';
 import './Layout.css';
 
 function Header() {
 
+    const todayDate = format(new Date(), 'yyyy-MM-dd');
     const handleContactClick = (event) => {
-        event.preventDefault(); // Prevent the default anchor behavior adding #kontakt to url
+        event.preventDefault();
         const contactSection = document.getElementById('kontakt');
         if (contactSection) {
             contactSection.scrollIntoView({
@@ -14,28 +18,21 @@ function Header() {
         }
     };
 
-
     const location = useLocation();
 
     useEffect(() => {
-        // Temporarily disable smooth scrolling
         const htmlElement = document.documentElement;
         htmlElement.style.scrollBehavior = 'auto';
 
-        // Scroll to the top of the page instantly when the route changes
         if (!location.hash) {
-            window.scrollTo(0, 0); // Instant scroll
+            window.scrollTo(0, 0);
         }
     }, [location]);
-
-
-
-
 
     return (
         <section className="header sticky-top">
             <nav className="navbar navbar-expand-lg bg-light" style={{ backgroundImage: 'linear-gradient(to right, rgb(111, 212, 158), rgb(0, 65, 31))' }}>
-                <div className="container" >
+                <div className="container">
                     <Link className="navbar-brand" to="/">Tanjirići Zdravići</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
                         aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +44,6 @@ function Header() {
                                 <Link className="nav-link" to="/recepti">Recepti</Link>
                             </li>
                             <li className="nav-item">
-                                {/* Use onClick to prevent default behavior and trigger smooth scrolling */}
                                 <a className="nav-link" href="#kontakt" onClick={handleContactClick}>Kontakt</a>
                             </li>
                         </ul>
@@ -62,6 +58,28 @@ function Header() {
                                 </svg>
                             </button>
                         </form>
+
+                        <ul className="navbar-nav ms-auto my-2 my-lg-0">
+                            <li className="nav-item dropdown">
+                                <a
+                                    className="nav-link"
+                                    href="#"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    style={{ display: 'flex', alignItems: 'center' }}>
+                                    <FontAwesomeIcon icon={faUserCircle} size="lg" style={{ color: '#fff' }} />
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    {/* <li><Link className="dropdown-item" to="/profile">Profil</Link></li> */}
+                                    <li className="dropdown-item">Profil</li>
+                                    <li>    <Link className="dropdown-item" to={`/profil/dnevni-unos/${todayDate}`}>Dnevni unos</Link></li>
+                                    <li><hr className="dropdown-divider" /></li>
+                                    <li><button className="dropdown-item" onClick={() => { /* Handle logout */ console.log('Logged out'); }}>Logout</button></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>

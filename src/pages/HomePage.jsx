@@ -26,7 +26,7 @@ const Home = () => {
 };
 
 const headingStyle = {
-    fontFamily: '"Charmonman", cursive',
+    fontFamily: '"Open Sans", sans-serif',
     fontSize: '2.5rem',
     fontWeight: 'bold',
     textAlign: 'center',
@@ -34,7 +34,7 @@ const headingStyle = {
 };
 
 const paragraphStyle = {
-    fontFamily: '"Charmonman", cursive',
+    fontFamily: '"Open Sans", sans-serif',
     fontSize: '1.5rem',
     textAlign: 'center',
     marginBottom: '40px',
