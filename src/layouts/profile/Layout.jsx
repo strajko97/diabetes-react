@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Layout = ({ children, isAdmin }) => {
     return (
         <div className="layout-container">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ backgroundImage: 'linear-gradient(to right, rgb(111, 212, 158), rgb(0, 65, 31))' }}>
+                <div className="container " style={{ backgroundImage: 'linear-gradient(to right, rgb(111, 212, 158), rgb(0, 65, 31))' }}>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -29,11 +29,11 @@ const Layout = ({ children, isAdmin }) => {
                         </aside>
                     </div>
                 </div>
-            </nav>
+            </nav >
             <main className="main-content">
                 {children}
             </main>
-        </div>
+        </div >
     );
 };
 
