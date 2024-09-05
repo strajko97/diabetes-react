@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
 
 // Custom Hook for form input management
 const useFormInput = (initialValue) => {
@@ -6,7 +7,6 @@ const useFormInput = (initialValue) => {
 
     const handleChange = (e) => {
         setValue(e.target.value);
-        // console.log(value);
     };
 
     return {
@@ -16,14 +16,45 @@ const useFormInput = (initialValue) => {
 };
 
 const Login = () => {
-    const email = useFormInput(''); // pocetno stanje naseg hooka je da je to prazna varijabla, hook useFormInput updateduje state cim se email forma promeni
-    const password = useFormInput('');// pocetno stanje naseg hooka je da je to prazna varijabla isto i ovde
+    const email = useFormInput(''); // Handle email input
+    const password = useFormInput(''); // Handle password input
+    const [errorMessage, setErrorMessage] = useState(''); // State to store error messages
+    const navigate = useNavigate(); // Hook to navigate programmatically
 
-    const handleSubmit = (e) => {
+    // Handle form submission
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle login logic here (e.g., call an API to authenticate)
-        console.log('Email:', email.value);
-        console.log('Password:', password.value);
+        setErrorMessage(''); // Clear any previous error messages
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/login', { // Ensure this is the correct login endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email.value,
+                    password: password.value,
+                }),
+            });
+
+            // Check if the response status is OK (successful)
+            const data = await response.json();
+
+            if (response.ok) {
+                // If login is successful, store the token in localStorage
+                localStorage.setItem('authToken', data.access_token);
+
+                // Navigate to the home page after login
+                navigate('/');
+            } else {
+                // If login fails, set error message
+                setErrorMessage(data.message || 'Email or password are incorrect.');
+            }
+        } catch (error) {
+            // If there's a network error or unexpected issue, set a generic error message
+            setErrorMessage('Something went wrong. Please try again.');
+        }
     };
 
     return (
@@ -32,6 +63,10 @@ const Login = () => {
                 <h1 className="mb-4">Dobrodošli na DiabetesApp</h1>
                 <div className="col-12" style={loginContainer}>
                     <h2 className="text-center mb-4">Login</h2>
+
+                    {/* Error message */}
+                    {errorMessage && <div className="alert alert-danger">{errorMessage}</div>}
+
                     <form onSubmit={handleSubmit}>
                         <div className="form-group mb-3">
                             <label htmlFor="email">Email addresa</label>
@@ -40,7 +75,7 @@ const Login = () => {
                                 className="form-control"
                                 id="email"
                                 placeholder="Email*"
-                                {...email} // Spread the email input props
+                                {...email}
                                 required
                             />
                         </div>
@@ -51,7 +86,7 @@ const Login = () => {
                                 className="form-control"
                                 id="password"
                                 placeholder="Password*"
-                                {...password} // Spread the password input props
+                                {...password}
                                 required
                             />
                         </div>
@@ -59,6 +94,12 @@ const Login = () => {
                             Login
                         </button>
                     </form>
+
+                    {/* Link to reset password */}
+                    <div className="mt-3">
+                        <p>Zaboravili ste lozinku? <a href="/reset-lozinke">Resetuj lozinku</a></p>
+                    </div>
+
                     <div className="mt-3">
                         <p>Niste registovani? <a href="/registracija">Registracija</a></p>
                     </div>

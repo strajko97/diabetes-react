@@ -10,6 +10,7 @@ import RecipeDetail from './pages/RecipeDetail';
 import Login from './pages/LoginPage';
 import SignUp from './pages/SignupPage';
 import DailyIntakePage from './layouts/profile/DailyIntake';
+import ResetPasswordSendMail from './pages/ResetPasswordSendMailPage';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/politika-privatnosti" element={<PrivacyPolicy />} />
         <Route path="/recepti" element={<Recipe />} />
         <Route path="/recepti/:id" element={<RecipeDetail />} />
+        <Route path="/reset-lozinke" element={<ResetPasswordSendMail />} />
       </Routes>
     </Router>
   );
